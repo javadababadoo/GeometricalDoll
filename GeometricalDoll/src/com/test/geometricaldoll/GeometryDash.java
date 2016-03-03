@@ -45,9 +45,20 @@ public class GeometryDash {
         Circle circle = new Circle(Color.GREEN, (widthCanvas/8)*4, (heightCanvas/8), (heightCanvas/8)*2, (heightCanvas/8)*2);
         getGeometryList().add(circle);
         
+        int[] x = new int[3];
+        int[] y = new int[3];
+        int n = 3;
+        x[0]=(int)(widthCanvas*0.25);
+        x[1]=(int)(widthCanvas*0.5);
+        x[2]=(int)(widthCanvas*0.75);
+        
+        y[0]= (int)(heightCanvas*0.7);
+        y[1]= (int)(heightCanvas*0.25);
+        y[2]= (int)(heightCanvas*0.7);
+        
         //Triangle
-//        Triangle triangle = new Triangle();
-//        getGeometryList().add(triangle);
+        Triangle triangle = new Triangle(Color.yellow, x, y);
+        getGeometryList().add(triangle);
         
         //Circle circle = new Circle(Color.yellow, x, y, widthCanvas, height);
     }
