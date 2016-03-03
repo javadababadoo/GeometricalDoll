@@ -28,8 +28,8 @@ public class Circle implements AbstractGeometry{
     public Circle(Color color, int x, int y, int width, int height) {
         System.out.println("Triangle X-> "+ x+" --- Y->"+y+" width->"+width+" Height: "+ height);
         this.color = color;
-        this.x = x;
-        this.y = y;
+        this.x = x - (r/2);
+        this.y = y -(r/2);
         this.width = width;
         this.height = height;
     }
