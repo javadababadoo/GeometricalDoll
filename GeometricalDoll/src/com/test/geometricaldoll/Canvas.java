@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.test.geometricaldoll;
 
 import java.awt.Graphics;
@@ -16,11 +15,11 @@ import java.awt.Graphics2D;
 public class Canvas extends javax.swing.JPanel {
 
     private static final Canvas uniqueInstance = new Canvas();
-    
-    public static Canvas getInstance(){
+
+    public static Canvas getInstance() {
         return uniqueInstance;
     }
-    
+
     /**
      * Creates new form Canvas
      */
@@ -37,6 +36,12 @@ public class Canvas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -49,19 +54,23 @@ public class Canvas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+        //these co-ords are relative to the component
+    }//GEN-LAST:event_formMouseClicked
+
     @Override
     public void paint(Graphics g) {
-        Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D) g;
         GeometryDash.getInstance().setWidthCanvas(this.getWidth());
         GeometryDash.getInstance().setHeightCanvas(this.getHeight());
         GeometryDash.getInstance().buildGeometry();
         GeometryDash.getInstance().getGeometryList().forEach(i -> i.paint(g2));
-        
+
 //        Repository.getInstance().getItems()
 //                //.stream()
 //                //.filter(AbstractItem::hasChanged)
 //                .forEach(i -> i.paint(g2,this));
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

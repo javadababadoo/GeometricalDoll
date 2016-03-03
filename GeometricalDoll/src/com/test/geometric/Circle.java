@@ -26,6 +26,7 @@ public class Circle implements AbstractGeometry{
     private int height; 
 
     public Circle(Color color, int x, int y, int width, int height) {
+        System.out.println("Triangle X-> "+ x+" --- Y->"+y+" width->"+width+" Height: "+ height);
         this.color = color;
         this.x = x;
         this.y = y;

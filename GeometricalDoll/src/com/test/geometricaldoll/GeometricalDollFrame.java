@@ -19,7 +19,7 @@ public class GeometricalDollFrame extends javax.swing.JFrame {
      */
     public GeometricalDollFrame() {
         initComponents();
-        setSize(800, 600);
+        setSize(1000, 1000);
         setLayout(new BorderLayout());
         add(Canvas.getInstance(),BorderLayout.CENTER);
         pack();
@@ -35,6 +35,12 @@ public class GeometricalDollFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 1000));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -49,6 +55,13 @@ public class GeometricalDollFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+        int x = evt.getX();
+        int y = evt.getY();
+        System.out.println(x + "," + y);
+    }//GEN-LAST:event_formMouseClicked
 
     /**
      * @param args the command line arguments
