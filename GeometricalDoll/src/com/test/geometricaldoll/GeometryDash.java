@@ -38,12 +38,12 @@ public class GeometryDash {
     public void buildGeometry(){
         //Background
         System.out.println("Width: "+ widthCanvas + " --- Height: "+ heightCanvas);
-        Rectangle rectangle = new Rectangle(Color.BLACK, 0, 0, widthCanvas, heightCanvas);
-        getGeometryList().add(rectangle);
+        Rectangle rectangleBackground = new Rectangle(Color.BLACK, 0, 0, widthCanvas, heightCanvas);
+        getGeometryList().add(rectangleBackground);
         
-        
-        Circle circle = new Circle(Color.GREEN, (widthCanvas/8)*4, (heightCanvas/8), (heightCanvas/8)*2, (heightCanvas/8)*2);
-        getGeometryList().add(circle);
+        //Head
+        Circle head = new Circle(Color.GREEN, (widthCanvas/8)*4, (heightCanvas/8), (heightCanvas/8)*2, (heightCanvas/8)*2);
+        getGeometryList().add(head);
         
         int[] x = new int[3];
         int[] y = new int[3];
@@ -56,11 +56,20 @@ public class GeometryDash {
         y[1]= (int)(heightCanvas*0.25);
         y[2]= (int)(heightCanvas*0.7);
         
-        //Triangle
-        Triangle triangle = new Triangle(Color.yellow, x, y);
-        getGeometryList().add(triangle);
+        //Arms
+        Rectangle arms = new Rectangle(Color.RED, (int)(widthCanvas * 0.25), (int) ((heightCanvas * 0.25)+ ((heightCanvas*0.45)*0.25)), (int)(widthCanvas*0.5), (int)(heightCanvas*0.12));
+        getGeometryList().add(arms);
         
-        //Circle circle = new Circle(Color.yellow, x, y, widthCanvas, height);
+        //Body
+        Triangle body = new Triangle(Color.yellow, x, y);
+        getGeometryList().add(body);
+        
+        //Legs
+        Rectangle leg1 = new Rectangle(Color.ORANGE, (int)(widthCanvas * 0.316), (int) (heightCanvas * 0.7), (int)(widthCanvas*0.12), (int)(heightCanvas*0.3));
+        getGeometryList().add(leg1);
+        
+        Rectangle leg2 = new Rectangle(Color.ORANGE, (int)(widthCanvas * 0.559), (int) (heightCanvas * 0.7), (int)(widthCanvas*0.12), (int)(heightCanvas*0.3));
+        getGeometryList().add(leg2);
     }
 
     /**

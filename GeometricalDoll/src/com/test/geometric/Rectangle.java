@@ -26,6 +26,7 @@ public class Rectangle implements AbstractGeometry{
     private int height;
 
     public Rectangle(Color color, int x, int y, int width, int height) {
+        System.out.println("Rectangle X-> "+ x+" --- Y->"+y+" width->"+width+" Height: "+ height);
         this.color = color;
         this.x = x;
         this.y = y;
